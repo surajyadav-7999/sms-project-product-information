@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .container
+    {
+        max-width: 500px;
+    }
+    .card
+    {
+         width: 30rem; 
+        background-color:#2BA6F6;
+        border-radius: 20px;
+    }
+    .card-body .title
+    {
+       font-size: 30px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 50px;
+        
+    }
+    .card-body form
+    {
+        color: #fff;
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    form lable
+    {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    form input
+    {
+        font-size: 15px;
+        border-radius: 30px;
+        width: 230px;
+        height: 50px;
+        border-style: none;
+        box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+        margin-left: 45px;
+        transition: all 0.3s ease;
+        border-color: red;
+        
+    }
+    form #firstNumber,#secondNumber,#fourNumber
+    {
+        padding-left: 20px;
+    }
+    
+   
+</style>
+<body>
+
+<div class="container">
+ <div class="card">
+    <div class="card-body">
+         <h1 class="title">Calculator</h1>
+          
+           <form action="">
+        
+                 <lable>SMS Charges:</lable>
+                 <input type="text" id="firstNumber" style="margin-left: 70px;outline: none;"> <br> <br>
+                
+               <lable>DLT Charges:</lable>
+               <input type="text" id="secondNumber" style="margin-left: 78px;outline: none;outline: none;"><br> <br>
+               
+              <input type="hidden" id="thrreNumber" />
+              <lable>Number of SMS:</lable>
+                <input type="text" id="fourNumber" style="margin-left: 51px;outline: none;"><br> <br>
+               <lable>TOTAL WITHOUT GST: </lable> 
+              <span id ="result" style="font-weight: bold; margin-left:30px;font-size: 20px;"></span><br> <br>
+              <lable>TOTAL WITH GST: </lable>
+                <span id ="result1" style="font-weight: bold; margin-left: 50px;font-size:20px;"></span><br> <br>
+       <div class="row">
+           <div class="col-sm-12">
+            <input type="button" onClick="add()" Value="Addition" id="bt1" style="width:100px;margin-left: 0;outline: none;background-color:#1E90FF;color: #fff;font-weight: bold;">
+            <input type="button" onClick="multiplyBy()" Value="Multiply" id="bt1" style="width:100px;margin-left: 0;;outline: none;background-color:#1E90FF;color: #fff;font-weight: bold;">
+           <input type="button" onClick="divideBy()" Value="Divide" id="bt1" style="width:100px;margin-left: 0;outline: none;background-color:#1E90FF;color: #fff;font-weight: bold;">
+          <input type="button" onClick="ADDGST()" Value="Add GST" id="bt1" style="width:100px;margin-left: 0;outline: none;background-color:#1E90FF;color: #fff;font-weight: bold;">
+          </div>
+        </div>
+      
+    </form>
+    </div>
+     
+ </div>
+ 
+</div>
+<script>
+function add()
+{
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        num3 = document.getElementById("result").value;
+        num4 = document.getElementById("fourNumber").value;
+  		c=parseFloat(num1)+parseFloat(num2);
+        document.getElementById("result").innerHTML = c;
+}
+
+function multiplyBy()
+{
+       //num3 = document.getElementById("result").value;
+        num4 = document.getElementById("fourNumber").value;
+        document.getElementById("result").innerHTML = num4 * c;
+        num5=parseFloat(num4)*parseFloat(c);
+}
+    function ADDGST()
+{
+        num3 = document.getElementById("thrreNumber").value;
+        //num4 = document.getElementById("fourNumber").value;
+       // document.getElementById("result").value;
+        gst=num5+(num5*0.18);
+        document.getElementById("result1").innerHTML = gst;
+}
+
+function divideBy() 
+{ 
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+		document.getElementById("result").innerHTML = num1 / num2;
+}
+</script>
+    </body>
+</html>

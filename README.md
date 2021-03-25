@@ -1,2 +1,2 @@
-# sms-project-product-information
-this is BULK sms Product information project information belid using html Css and bootstrap 
+# Side-Navigation-Bar-O119
+How to create the Side Navigation Bar Using HTML CSS andd Jquery
